@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "1e720d19-959d-4948-9a37-19d28d61be03",
+		"name": "microservicios",
+		"description": "microservicios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2986929",
+		"_collection_link": "https://winter-spaceship-807466.postman.co/workspace/pruebas-kafka~f4a955af-f196-498a-8296-9b6d5bc04e96/collection/2986929-1e720d19-959d-4948-9a37-19d28d61be03?action=share&source=collection_link&creator=2986929"
+	},
+	"item": [
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "obtener categoria",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'http://localhost:8080/api/categorias/1' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				},
+				{
+					"name": "obtener categorias",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'http://localhost:8080/api/categorias' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				},
+				{
+					"name": "modificar categoria",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productos\": [\n    {\n      \"id\": 9007199254740991,\n      \"nombre\": \"string\",\n      \"descripcion\": \"string\",\n      \"precio\": 0,\n      \"stock\": 1073741824,\n      \"categoriaId\": 9007199254740991\n    }\n  ],\n  \"id\": 9007199254740991,\n  \"nombre\": \"string\",\n  \"descripcion\": \"string\",\n  \"iva\": \"IVA_4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categorias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PUT' \\\n  'http://localhost:8080/api/categorias/1' \\\n  -H 'accept: */*' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"productos\": [\n    {\n      \"id\": 9007199254740991,\n      \"nombre\": \"string\",\n      \"descripcion\": \"string\",\n      \"precio\": 0,\n      \"stock\": 1073741824,\n      \"categoriaId\": 9007199254740991\n    }\n  ],\n  \"id\": 9007199254740991,\n  \"nombre\": \"string\",\n  \"descripcion\": \"string\",\n  \"iva\": \"IVA_4\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "crear categoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Electrodomesticos\",\n  \"descripcion\": \"Electrodomesticos\",\n  \"iva\": \"IVA_21\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/categorias' \\\n  -H 'accept: */*' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"productos\": [\n    {\n      \"id\": 9007199254740991,\n      \"nombre\": \"string\",\n      \"descripcion\": \"string\",\n      \"precio\": 0,\n      \"stock\": 1073741824,\n      \"categoriaId\": 9007199254740991\n    }\n  ],\n  \"id\": 9007199254740991,\n  \"nombre\": \"string\",\n  \"descripcion\": \"string\",\n  \"iva\": \"IVA_4\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/categorias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'DELETE' \\\n  'http://localhost:8080/api/categorias/1' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				},
+				{
+					"name": "guardar producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 9007199254740991,\n  \"nombre\": \"string\",\n  \"descripcion\": \"string\",\n  \"precio\": 0,\n  \"stock\": 1073741824,\n  \"categoriaId\": 9007199254740991\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/productos' \\\n  -H 'accept: */*' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"id\": 9007199254740991,\n  \"nombre\": \"string\",\n  \"descripcion\": \"string\",\n  \"precio\": 0,\n  \"stock\": 1073741824,\n  \"categoriaId\": 9007199254740991\n}'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "crear cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Rafael\",\n  \"apellidos\": \"Alapont Gómez\",\n  \"nif\": \"60393996I\",\n  \"telefono\": \"987125158\",\n  \"email\": \"rafael.alapont@server.com\",\n  \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"clientes"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8083/api/clientes' \\\n  -H 'accept: */*' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"nombre\": \"Rafael\",\n  \"apellidos\": \"Alapont Gómez\",\n  \"nif\": \"60393996I\",\n  \"telefono\": \"987125158\",\n  \"email\": \"rafael.alapont@server.com\",\n  \"password\": \"123456789\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "get clientes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'http://localhost:8083/api/clientes?page=0&size=1&sort=string' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: \ncurl -X POST http://localhost:8080/auth/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\"\n}'\n"
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\",\n    \"roles\": [\"ROLE_USER\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"auth",
+								"register"
+							]
+						},
+						"description": "Generated from cURL: \ncurl -X POST http://localhost:8080/auth/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\",\n    \"roles\": [\"ROLE_USER\"]\n}'\n"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
