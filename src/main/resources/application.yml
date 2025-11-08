@@ -30,4 +30,4 @@ eureka:
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
 
 server:
-  port: 8084
+  port: 8091
