@@ -23,7 +23,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Lazy
     private final ApplicationUserDetailsService userDetailsService;
 
-
     public JwtAuthenticationFilter(ApplicationUserDetailsService userDetailsService, JwtService jwtService) {
         this.userDetailsService = userDetailsService;
         this.jwtService = jwtService;
@@ -32,10 +31,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        String path = request.getServletPath();
+        String path = request.getRequestURI();
 
         // Ignorar rutas públicas
-        if (path.startsWith("/auth")) {
+        if (path.startsWith("/api/auth/")) {
             filterChain.doFilter(request, response);
             return;
         }

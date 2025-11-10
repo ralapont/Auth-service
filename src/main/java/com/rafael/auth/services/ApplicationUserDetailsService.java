@@ -65,4 +65,8 @@ public class ApplicationUserDetailsService implements UserDetailsService {
 
         userRepository.save(newUser);
     }
+
+    public boolean existsByUsername(String username) {
+        return userRepository.existsByUsername(username);
+    }
 }

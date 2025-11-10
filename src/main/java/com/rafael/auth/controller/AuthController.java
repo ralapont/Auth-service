@@ -12,10 +12,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -52,4 +49,16 @@ public class AuthController {
         // Si usas JWT, el logout se maneja en el cliente (elimina el token)
         return ResponseEntity.ok("Logout exitoso");
     }
+
+    @GetMapping("/user/{username}")
+    public ResponseEntity<Void> checkUserExists(@PathVariable String username) {
+        boolean exists = userService.existsByUsername(username);
+
+        if (exists) {
+            return ResponseEntity.ok().build(); // 200 OK si existe
+        } else {
+            return ResponseEntity.notFound().build(); // 404 si no existe
+        }
+    }
+
 }
