@@ -14,6 +14,16 @@
 				{
 					"name": "obtener categoria",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bearer}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -22,12 +32,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/categorias",
+							"raw": "http://localhost:8090/api/categorias",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8090",
 							"path": [
 								"api",
 								"categorias"
@@ -106,6 +116,16 @@
 				{
 					"name": "crear categoria",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzYyNjI5OTExLCJleHAiOjE3NjI2NjU5MTF9.H_fNRsERb_blVpk2WsR_1NJZ4oWLkMDCDqBpWBgvTGM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -127,12 +147,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/categorias",
+							"raw": "http://localhost:8090/api/categorias",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8090",
 							"path": [
 								"api",
 								"categorias"
@@ -172,6 +192,16 @@
 				{
 					"name": "guardar producto",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bearer}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -185,7 +215,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": 9007199254740991,\n  \"nombre\": \"string\",\n  \"descripcion\": \"string\",\n  \"precio\": 0,\n  \"stock\": 1073741824,\n  \"categoriaId\": 9007199254740991\n}",
+							"raw": "{\n  \"codigo\": \"KK002\",\n  \"nombre\": \"Radio Telefunken\",\n  \"descripcion\": \"Radio telefunken antiguo\",\n  \"precio\": 100,\n  \"stock\": 120,\n  \"categoriaId\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -193,18 +223,55 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos",
+							"raw": "http://localhost:8090/api/productos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8090",
 							"path": [
 								"api",
 								"productos"
 							]
 						},
 						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/productos' \\\n  -H 'accept: */*' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"id\": 9007199254740991,\n  \"nombre\": \"string\",\n  \"descripcion\": \"string\",\n  \"precio\": 0,\n  \"stock\": 1073741824,\n  \"categoriaId\": 9007199254740991\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/productos/KK001?stock=150",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"productos",
+								"KK001"
+							],
+							"query": [
+								{
+									"key": "stock",
+									"value": "150"
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -216,6 +283,16 @@
 				{
 					"name": "crear cliente",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bearer}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -229,7 +306,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nombre\": \"Rafael\",\n  \"apellidos\": \"Alapont Gómez\",\n  \"nif\": \"60393996I\",\n  \"telefono\": \"987125158\",\n  \"email\": \"rafael.alapont@server.com\",\n  \"password\": \"123456789\"\n}",
+							"raw": "{\n  \"nombre\": \"Gloria\",\n  \"apellidos\": \"Tardajos Rodriguez\",\n  \"nif\": \"60393996I\",\n  \"telefono\": \"987125158\",\n  \"email\": \"gloria.tardajos@server.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,12 +314,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/api/clientes",
+							"raw": "http://localhost:8093/api/clientes",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8083",
+							"port": "8093",
 							"path": [
 								"api",
 								"clientes"
@@ -277,47 +354,35 @@
 						"description": "Generated from cURL: curl -X 'GET' \\\n  'http://localhost:8083/api/clientes?page=0&size=1&sort=string' \\\n  -H 'accept: */*'"
 					},
 					"response": []
+				},
+				{
+					"name": "obtener clientes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "auth",
 			"item": [
-				{
-					"name": "login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/auth/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"auth",
-								"login"
-							]
-						},
-						"description": "Generated from cURL: \ncurl -X POST http://localhost:8080/auth/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\"\n}'\n"
-					},
-					"response": []
-				},
 				{
 					"name": "register",
 					"request": {
@@ -330,7 +395,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\",\n    \"roles\": [\"ROLE_USER\"]\n}",
+							"raw": "{\n    \"username\": \"user3\",\n    \"password\": \"password123\",\n    \"roles\": [\"ROLE_USER\", \"ROLE_ADMIN\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -338,13 +403,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/auth/register",
+							"raw": "http://localhost:8090/api/auth/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8084",
+							"port": "8090",
 							"path": [
+								"api",
 								"auth",
 								"register"
 							]
@@ -352,8 +418,207 @@
 						"description": "Generated from cURL: \ncurl -X POST http://localhost:8080/auth/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\",\n    \"roles\": [\"ROLE_USER\"]\n}'\n"
 					},
 					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"// En la pestaña \"Tests\" del request de login\r",
+									"let jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"token_bearer\", jsonData.token); // ajusta según el nombre del campo\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user3\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: \ncurl -X POST http://localhost:8080/auth/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\"\n}'\n"
+					},
+					"response": []
+				},
+				{
+					"name": "verificar user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8090/api/auth/user2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"auth",
+								"user2"
+							]
+						},
+						"description": "Generated from cURL: \ncurl -X POST http://localhost:8080/auth/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"username\": \"usuario1\",\n    \"password\": \"password123\"\n}'\n"
+					},
+					"response": []
 				}
 			]
+		},
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzYyNjA5OTU4LCJleHAiOjE3NjI2NDU5NTh9.m5qfmDhY6lR5Ghb0XW2QtluMV9MCvmM7euQw40OV8Wc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/test/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"test",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzYyNjA5OTU4LCJleHAiOjE3NjI2NDU5NTh9.m5qfmDhY6lR5Ghb0XW2QtluMV9MCvmM7euQw40OV8Wc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/test/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"test",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shared",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzYyNjA5OTU4LCJleHAiOjE3NjI2NDU5NTh9.m5qfmDhY6lR5Ghb0XW2QtluMV9MCvmM7euQw40OV8Wc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/test/shared",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"test",
+						"shared"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token_bearer",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
