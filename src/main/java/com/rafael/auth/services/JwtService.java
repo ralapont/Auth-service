@@ -3,6 +3,7 @@ package com.rafael.auth.services;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,10 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class JwtService {
-    private static final String SECRET_KEY = "clave_super_secreta_y_segura_para_firmar_jwt_12345678901234567890";
+    private static final String SECRET_KEY = "TuClaveSecretaSuperSegura1234567890";
 
     private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
