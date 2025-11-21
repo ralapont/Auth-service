@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: auth-service   # Nombre del servicio
+  config:
+    import: "configserver:http://localhost:8888"
